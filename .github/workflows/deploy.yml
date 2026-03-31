@@ -50,10 +50,10 @@ jobs:
           az webapp config container set \
             --name ${{ secrets.AZURE_APP_NAME }} \
             --resource-group ${{ secrets.AZURE_RG }} \
-            --image ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:${{ github.sha }} \
-            --registry-server https://${{ secrets.ACR_NAME }}.azurecr.io \
-            --registry-username ${{ secrets.ACR_USERNAME }} \
-            --registry-password ${{ secrets.ACR_PASSWORD }}
+            --docker-custom-image-name ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:${{ github.sha }} \
+            --docker-registry-server-url https://${{ secrets.ACR_NAME }}.azurecr.io \
+            --docker-registry-server-user ${{ secrets.ACR_USERNAME }} \
+            --docker-registry-server-password ${{ secrets.ACR_PASSWORD }}
 
           az webapp restart \
             --name ${{ secrets.AZURE_APP_NAME }} \
