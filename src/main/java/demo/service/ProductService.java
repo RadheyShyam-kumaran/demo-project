@@ -23,21 +23,21 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts() {
-        return new ArrayList<>(productStore.values());
+        return new ArrayList<>(productStore.values()); // used to get all values 
     }
 
     public Product getProductById(Long id) {
-        return productStore.get(id);
+        return productStore.get(id);         // used to fecth data by id
     }
 
     public Product addProduct(Product product) {
         product.setId(counter++);
         productStore.put(product.getId(), product);
-        return product;
+        return product;								// adding the product in object so it will store it until the project ir redoployed 
     }
 
     public Product updateProduct(Long id, Product product) {
-        if (!productStore.containsKey(id)) return null;
+        if (!productStore.containsKey(id)) return null;  //these changes will be there untill redoplyed
         product.setId(id);
         productStore.put(id, product);
         return product;
@@ -45,7 +45,7 @@ public class ProductService {
 
     public boolean deleteProduct(Long id) {
         if (!productStore.containsKey(id)) return false;
-        productStore.remove(id);
+        productStore.remove(id);				//delete the product 
         return true;
     }
 }
