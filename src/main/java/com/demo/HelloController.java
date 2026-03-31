@@ -15,7 +15,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "Hello from Azure! App is running 🚀";
+        return "Hello ! App is running  v2 !!!";
     }
 
     @GetMapping("/health")
