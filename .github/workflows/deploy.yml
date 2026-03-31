@@ -25,13 +25,14 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: 'maven'             # ← only change in this job
 
       - name: Run Tests
         run: mvn test
 
   build-and-deploy:
     runs-on: ubuntu-latest
-    needs: test                   
+    needs: test
 
     steps:
       - name: Checkout code
@@ -42,6 +43,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
+          cache: 'maven'             # ← only change in this job
 
       - name: Build JAR with Maven
         run: mvn clean package -DskipTests
