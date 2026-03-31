@@ -15,7 +15,7 @@ public class HelloController {
 
     @GetMapping("/")
     public String home() {
-        return "Hello ! App is running  v2 !!!";
+        return "Hello ! App is running  v3";
     }
 
     @GetMapping("/health")
