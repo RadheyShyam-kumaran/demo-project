@@ -19,7 +19,7 @@ public class ProductService {
         addProduct(new Product(null, "Laptop", "High performance laptop", 999.99, 10));
         addProduct(new Product(null, "Phone", "Latest smartphone", 699.99, 25));
         addProduct(new Product(null, "Headphones", "Noise cancelling headphones", 199.99, 50));
-        addProduct(new Product(null, "Tablet", "10 inch display tablet", 499.99, 15));
+        addProduct(new Product(null, "Tablet", "10 inch display tablet", 499.99, 16));
     }
 
     public List<Product> getAllProducts() {
